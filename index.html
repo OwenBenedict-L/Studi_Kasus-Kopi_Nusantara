@@ -4,19 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kopi Nusantara</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Kopi Nusantara</h1>
+    <nav class="nav-menu">
+        <div class="left-menu">
+            <img src="/img/biji-kopi.jpg" alt="Logo">
 
-        <nav>
-            <a href="#heroBanner">Home</a>
-            <a href="#menu">Menu</a>
-            <a href="#tentang">Tentang</a>
-            <a href="#kontak">Kontak</a>
-        </nav>
-    </header>
+            <ul class="left-menu-show">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#tentang">Tentang</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+        </div>
+
+        <div class="right-menu">
+            <ul class="right-menu-show">
+                <li><a href="#"><i class="fas fa-search"></i></a></li>
+                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                <li><a href="#"><i class="fas fa-bars fa-2x"></i></a></li>
+            </ul>
+        </div>
+    </nav>
 
     <main>
         <section id="heroBanner">
@@ -40,5 +51,9 @@
         <p>&copy;2026</p>
     </footer>
     
+    <script>
+        document.querySelector('.fas.fa-bars.fa-2x').addEventListener('click', () => 
+        document.querySelector('.left-menu-show').classList.toggle('show'));
+    </script>
 </body>
 </html>
