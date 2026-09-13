@@ -18,6 +18,14 @@ body {
     background-color: #f6eede;
 }
 
+.logo {
+    width: 100%;
+    height: auto;
+    border: 3px solid rgb(58, 52, 49);
+    background-color: rgb(172, 127, 68);
+    border-radius: 35%;
+}
+
 /* navigation */
 .nav-menu {
     display: flex;
@@ -71,7 +79,7 @@ body {
 }
 
 .nav-menu .left-menu img {
-    max-width: 10%;
+    max-width: 5%;
     height: 100%;
 }
 
@@ -138,15 +146,37 @@ body {
     margin: 20px 10px 10px;
 }
 
-.tentang-container img {
-    display: flex;
-    margin: 0 auto;
-    max-width: 90%;
-    height: auto;
+.tentang-container {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    padding: 2% 4%;
+    gap: 30px;
+    align-items: center;
+    width: fit-content;
+    background-color: rgb(210, 221, 230);
+}
+
+.tentang-img {
+    width: fit-content;
+}
+
+.tentang-img img {
+    display: block;
+    margin: 0;
+    max-width: 130px;
 }
 
 .tentang-text {
     text-align: justify;
+}
+
+.tentang-text h2 {
+    font-size: 150%;
+    margin-bottom: 5%;
+}
+
+.tentang-text p {
+    font-size: 12px;
 }
 
 /* kontak */
@@ -182,6 +212,8 @@ footer {
         font-size: 16px;
         transform: translateX(0px);
         transition: none;
+        margin-left: 10%;
+        background-color: transparent;
     }
 
     .fas.fa-bars.fa-2x {
@@ -201,11 +233,17 @@ footer {
         align-items: center;
     }
 
-    /* tentang */
+    .tentang-container {
+        gap: 50px;
+    }
+
+    /* tentang  */
     .tentang-img {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        margin: 0;
+        max-width: 200px;
+    } 
+
+    .tentang-text p {
+        font-size: 14px;
     }
 
     /* footer */
@@ -233,6 +271,24 @@ footer {
     /* menu */
     .menu-container {
         grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    /* tentang */
+    .tentang-container {
+        padding: 2% 4%;
+        gap: 70px;
+    }
+
+    .tentang-img {
+        width: fit-content;
+    }
+
+    .tentang-img img {
+        max-width: 300px;
+    }
+
+    .tentang-text p {
+        font-size: 16px;
     }
 
     /* footer */
