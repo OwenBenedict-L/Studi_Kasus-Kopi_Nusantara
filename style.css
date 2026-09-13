@@ -87,7 +87,6 @@ a {
 /* menu */
 #menu {
     margin: 10px;
-    padding: 10px;
     width: auto;
 }
 
@@ -103,11 +102,32 @@ a {
     height: auto;
 }
 
+/* tentang */
+#tentang {
+    margin: 20px 10px 10px;
+}
+
+.tentang-container img {
+    display: flex;
+    margin: 0 auto;
+    max-width: 90%;
+    height: auto;
+}
+
+.tentang-text {
+    text-align: justify;
+}
+
+/* kontak */
+#kontak {
+    margin: 20px 10px 20px;
+}
+
 /* footer */
 footer {
     border: 2px solid black;
     max-width: 100%;
-    padding: 5px;
+    padding: 8px;
     background-color: #a5a5a5;
     text-align: center;
 }
@@ -138,7 +158,7 @@ footer {
     }
 
     /* menu */
-    .all-menu {
+    .menu-container {
         display: grid;
         gap: 20px;
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -148,6 +168,18 @@ footer {
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    /* tentang */
+    .tentang-img {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin: 0;
+    }
+
+    /* footer */
+    footer {
+        font-size: 24px;
     }
 }
 
@@ -168,7 +200,12 @@ footer {
     }
 
     /* menu */
-    .all-menu {
+    .menu-container {
         grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    /* footer */
+    footer {
+        font-size: 30px;
     }
 }
