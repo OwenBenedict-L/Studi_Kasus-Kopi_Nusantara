@@ -17,7 +17,7 @@ a {
 /* navigation */
 .nav-menu {
     display: flex;
-    margin: 0 10px;
+    margin: 4px 10px;
     justify-content: space-between;
     position: relative;
 }
@@ -65,18 +65,20 @@ a {
     height: 100%;
 }
 
-/* header */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
+/* hero banner */
+#hero-banner {
+    margin: 20px 10px;
+    padding: 40px 10px;
+    text-align: center;
+    width: auto;
+    border-style: solid;
 }
 
-a {
-    text-decoration: none;
+#hero-banner h1 {
+    margin-bottom: 40px;
 }
 
+/* footer */
 footer {
     border: 2px solid black;
     max-width: 100%;
@@ -87,12 +89,20 @@ footer {
 
 /* media 576-992px */
 @media (min-width: 576px) {
+    .left-menu {
+        flex: 1;
+    }
+
     .left-menu-show {
         position: relative;
         flex-direction: row;
+        flex-wrap: wrap;
         width: auto;
         padding: 10px;
-        gap: 10px;
+        gap: 20px;
+        flex: none;
+        margin-left: 20px;
+        font-size: 20px;
         transform: translateX(0px);
         transition: none;
     }
@@ -104,5 +114,12 @@ footer {
 
 /* media >992px */
 @media (min-width: 992px) {
-    
+    .left-menu-show {
+        gap: 40px;
+    }
+
+    .right-menu-show {
+        font-size: 24px;
+        gap: 40px;
+    }
 }
