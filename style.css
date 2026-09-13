@@ -29,7 +29,7 @@ body {
 /* navigation */
 .nav-menu {
     display: flex;
-    margin: 4px 10px;
+    margin: 10px 10px;
     justify-content: space-between;
     position: relative;
 }
@@ -46,18 +46,22 @@ body {
 .left-menu p {
     display: flex;
     align-items: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 20px;
+    color: #3d2607;
 }
 
 .left-menu-show {
     display: flex;
     position: absolute;
+    top: 110%;
+    z-index: 999;
     flex-direction: column;
     flex: 1;
-    width: 100px;
+    width: 200px;
     padding: 20px;
     gap: 20px;
-    background-color: white;
+    background-color: #f6eede;
     list-style: none;
     align-items: center;
     justify-content: space-between;
@@ -65,8 +69,20 @@ body {
     transition: transform 0.5s ease-in-out;
 }
 
+.left-menu-show a {
+    color: #5c3a21;
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.left-menu-show a:hover {
+    font-weight: bold;
+    transform: scale(1.1);
+}
+
 .left-menu-show.show {
     transform: translateX(-20px);
+    background-color: #fffaf1;
 }
 
 .right-menu-show {
@@ -79,8 +95,40 @@ body {
 }
 
 .nav-menu .left-menu img {
-    max-width: 5%;
+    max-width: 20%;
     height: 100%;
+}
+
+.right-menu {
+    position: relative; 
+}
+
+.search-button {
+    position: absolute;
+    z-index: 1000;
+    top: 50%;
+    right: 100%;
+    margin-right: 10px;
+    background-color: #fffaf1;
+    padding: 10px;
+    border: solid;
+    border-width: 2px;
+    border-radius: 50px;
+    transform: translateY(-50%) scaleX(0);
+    transform-origin: right center;
+    transition: transform 0.3s ease-in-out; 
+}
+
+.search-button.active {
+    transform: translateY(-50%) scaleX(1);
+}
+
+.search-button input {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background-color: #fffaf1;
+    margin-left: 10px;
 }
 
 /* hero banner */
@@ -113,13 +161,13 @@ body {
 
 .background-banner h1 {
     font-family: 'Brush Script MT', 'Lucida Handwriting', cursive;
-    font-size: 35px;
+    font-size: 20px;
     font-weight: normal;
 }
 
 .background-banner h2 {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 50px;
+    font-size: 30px;
     font-weight: bold;
 }
 
@@ -181,7 +229,58 @@ body {
 
 /* kontak */
 #kontak {
-    margin: 20px 10px 20px;
+    margin: 20px 10px;
+    display: flex;
+    align-items: stretch;
+    border: solid;
+    color: #3d2607;
+    border-color: #000000;
+}
+
+.kontak-img {
+    flex: 0.4;
+}
+
+.kontak-info {
+    flex: 0.6;
+    background-color: #dacfb8;
+    padding: 40px;    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+.kontak-info h2 {
+    margin-bottom: 0px;
+    font-size: 22px;
+}
+
+.kontak-info h4 {
+    font-style: italic;
+    font-weight: normal;
+    font-size: 12px;
+    margin-bottom: 20px;
+    border-bottom: solid;
+    padding-bottom: 10px;
+    border-color: #000000;
+}
+
+.kontak-info p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+    font-size: 12px;
+}
+
+.kontak-info a:hover {
+    font-weight: bold;
+    color: #61574b;
+}
+
+.kontak-img img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* footer */
@@ -200,24 +299,36 @@ footer {
         flex: 1;
     }
 
+    .nav-menu .left-menu img {
+        max-width: 10%;
+    }
+
     .left-menu-show {
         position: relative;
+        top: 0;
         flex-direction: row;
         flex-wrap: wrap;
         width: auto;
         padding: 10px;
-        gap: 20px;
+        gap: 40px;
         flex: none;
         margin-left: 12px;
         font-size: 16px;
         transform: translateX(0px);
         transition: none;
-        margin-left: 10%;
-        background-color: transparent;
     }
 
     .fas.fa-bars.fa-2x {
         display: none;
+    }
+
+    /* herro banner */
+    .background-banner h1 {
+        font-size: 25px;
+    }
+
+    .background-banner h2 {
+    font-size: 40px;
     }
 
     /* menu */
@@ -246,6 +357,19 @@ footer {
         font-size: 14px;
     }
 
+    /* kontak */
+    .kontak-info h2 {
+        font-size: 28px;
+    }
+
+    .kontak-info h4 {
+        font-size: 16px;
+    }
+
+    .kontak-info p {
+        font-size: 16px;
+    }
+
     /* footer */
     footer {
         font-size: 24px;
@@ -260,12 +384,28 @@ footer {
     }
 
     .left-menu-show {
-        font-size: 24px;
+        top: 0;
+        font-size: 20px;
+        gap: 60px;
+        margin-left: 30px;
     }
 
     .right-menu-show {
         font-size: 24px;
         gap: 40px;
+    }
+
+    .nav-menu .left-menu img {
+        max-width: 10%;
+    }
+
+    /* herro banner */
+    .background-banner h1 {
+        font-size: 35px;
+    }
+
+    .background-banner h2 {
+        font-size: 50px;
     }
 
     /* menu */
@@ -288,6 +428,19 @@ footer {
     }
 
     .tentang-text p {
+        font-size: 16px;
+    }
+
+    /* kontak */
+    .kontak-info h2 {
+        font-size: 28px;
+    }
+
+    .kontak-info h4 {
+        font-size: 16px;
+    }
+
+    .kontak-info p {
         font-size: 16px;
     }
 
