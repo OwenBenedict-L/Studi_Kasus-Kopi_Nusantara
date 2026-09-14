@@ -11,7 +11,7 @@
     <!-- navigation -->
     <nav class="nav-menu">
         <div class="left-menu">
-            <img src="img/biji-kopi.png" alt="Logo">
+            <img src="img/biji-kopi.jpg" alt="Logo">
             <p>KOPI NUSANTARA</p>
             <ul class="left-menu-show">
                 <li><a href="#hero-banner">Home</a></li>
@@ -23,10 +23,14 @@
 
         <div class="right-menu">
             <ul class="right-menu-show">
-                <li><a href="#"><i class="fas fa-search"></i></a></li>
+                <li><a href="#" id="searching"><i class="fas fa-search"></i></a></li>
                 <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
                 <li><a href="#"><i class="fas fa-bars fa-2x"></i></a></li>
             </ul>
+
+            <div class="search-button">
+                <input type="search" id="search-box" placeholder="Cari kopi...">
+            </div>
         </div>
     </nav>
 
@@ -36,7 +40,7 @@
             <div class="background-banner">
                 <img src="img/background-banner.png" alt="Banner">
                 <h1>Welcome To Our Company Profile</h1>
-                <h2>KOPI NUSANTARA</h2>
+                <h2>CITA RASA ASLI INDONESIA</h2>
             </div>
         </section>
 
@@ -100,26 +104,34 @@
             <h2>Tentang Kami</h2>
             <div class="tentang-container">
                 <div class="tentang-img">
-                    <img src="img/sangrai.png" alt="Proses sangrai biji kopi di Kopi Nusantara">
-                    <img src="img/kopi.png" alt="Biji kopi pilihan Kopi Nusantara">
+                    <img src="img/LogoKopi.png" class="logo" alt="Tentang1">
+                    <!-- <img src="/img/biji-kopi.jpg" alt="Tentang2"> -->
                 </div>
                 <div class="tentang-text">
-                    <p>Kopi Nusantara berdiri dari kecintaan pada kopi-kopi single origin
-                        Indonesia. Kami bekerja sama langsung dengan petani dari Aceh, Toraja,
-                        hingga Bali untuk menghadirkan biji kopi terbaik yang disangrai segar
-                        setiap minggunya di kedai kami.</p>
+                    <h2>Cerita Kami</h2>
+                    <p>Kopi Nusantara berdiri dari kecintaan pada kopi-kopi single origin Indonesia. 
+                        Kami bekerja sama langsung dengan petani dari Aceh, Toraja, hingga Bali untuk 
+                        menghadirkan biji kopi terbaik yang disangrai segar setiap minggunya di kedai kami.
+                        Selain menjaga kualitas rasa, kami juga berkomitmen mendukung kesejahteraan petani 
+                        lokal dengan sistem perdagangan yang adil. Setiap cangkir yang kami sajikan bukan 
+                        hanya menghadirkan aroma dan cita rasa khas Nusantara, tetapi juga membawa cerita 
+                        perjalanan panjang dari kebun kopi hingga ke meja Anda.</p>
                 </div>
             </div>
         </section>
 
         <!-- kontak -->
         <section id="kontak">
-            <h2>Hubungi Kami</h2>
+            <div class="kontak-img">
+                <img src="/img/kontak.png" alt="kontak">
+            </div>
+
             <div class="kontak-info">
-                <p>Punya pertanyaan atau mau pesan dalam jumlah banyak? Hubungi kami lewat kanal berikut.</p>
-                <p><strong>WhatsApp:</strong> 0812-3456-7890</p>
-                <p><strong>Email:</strong> kopi_nusantara@gmail.com</p>
-                <p><strong>Alamat:</strong> Jl. Letjen S. Parman, Jakarta Barat</p>
+                <h2>Hubungi Kami</h2>
+                <h4>Untuk setiap pertanyaan, pemesanan, maupun kerja sama.</h4>
+                <p><strong>WhatsApp:</strong><a href="#"> 0812-3456-7890</a></p>
+                <p><strong>Email:</strong><a href="#"> kopi_nusantara@gmail.com</a></p>
+                <p><strong>Alamat:</strong><a href="#"> Jl. Letjen S. Parman, Jakarta Barat</a></p>
             </div>
         </section>
     </main>
@@ -139,6 +151,11 @@
     <script>
         document.querySelector('.fas.fa-bars.fa-2x').addEventListener('click', () => 
         document.querySelector('.left-menu-show').classList.toggle('show'));
+
+        document.querySelector('#searching').addEventListener('click', (e) => {
+            e.preventDefault(); 
+            document.querySelector('.search-button').classList.toggle('active');
+        });
     </script>
 </body>
 </html>
