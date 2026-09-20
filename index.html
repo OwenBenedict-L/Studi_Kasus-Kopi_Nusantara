@@ -123,9 +123,32 @@
         <!-- kontak -->
         <section id="kontak">
             <div class="kontak-img">
-                <img src="/img/kontak.png" alt="kontak">
-            </div>
+                <form class="kontak-form" id="kontakform">
+                    <div class="kontak-input">
+                        <label>Nama</label>
+                        <input type="text" id="nama" name="nama" maxlength="99" placeholder="Masukkan Nama Anda . . .">
+                    </div>
 
+                    <div class="kontak-input">
+                        <label>Email</label>
+                        <input type="text" id="email" name="email" maxlength="99" placeholder="Masukkan Email Anda . . .">
+                    </div>
+
+                    <div class="kontak-input">
+                        <label>Keperluan</label>
+                        <div class="pembungkus">
+                            <textarea id="keperluan" name="keperluan" maxlength="999" placeholder="Masukkan Keperluan Anda . . ."></textarea>
+                            <span id="char_count">0/999</span>
+                        </div>
+                    </div>
+
+                    <p id="pesan-error"></p>
+
+                    <button type="submit" class="kontak_submit">Submit</button>
+
+                 </form>
+            </div>
+            
             <div class="kontak-info">
                 <h2>Hubungi Kami</h2>
                 <h4>Untuk setiap pertanyaan, pemesanan, maupun kerja sama.</h4>
