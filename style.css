@@ -272,6 +272,7 @@ html {
 #kontak {
     margin: 20px 10px;
     display: flex;
+    flex-direction: row;
     align-items: stretch;
     border: solid;
     color: #3d2607;
@@ -280,15 +281,18 @@ html {
 
 .kontak-img {
     flex: 0.4;
+    min-width: 0;
 }
 
 .kontak-info {
     flex: 0.6;
     background-color: #dacfb8;
-    padding: 40px;    
+    padding: 40px 25px; 
     display: flex;
     flex-direction: column;
     justify-content: center;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
     text-align: left;
 }
 
@@ -326,6 +330,69 @@ html {
 
 .kontak-info p {
     margin-bottom: 8px;
+}
+
+.kontak-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; 
+    max-width: 350px;
+    padding: 20px;
+    gap: 15px; 
+    width: 100%; 
+}
+
+.kontak-input {
+    display: flex;
+    flex-direction: column;
+    gap: 6px; 
+}
+
+.kontak-input input {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px 12px;
+    font-size: 10px;
+    border: 1px solid #777;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+#keperluan {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px 14px 28px 14px;
+    font-size: 10px;
+    height: 120px;
+    border: 1px solid #777;
+    border-radius: 10px;
+    resize: vertical;
+    box-sizing: border-box;
+    resize: none;
+}
+
+.pembungkus {
+    position: relative;
+    max-width: 400px;
+    width: 100%;
+}
+
+.kontak_submit {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 12px;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background-color 0.2s ease;
+    border: black solid 1px;
+}
+
+.kontak_submit:hover {
+    background-color: rgb(7, 7, 201);
+    transition: 0.5s;
 }
 
 /* footer */
@@ -375,7 +442,6 @@ footer {
         transform: translateX(0px);
         transition: none;
     }
-
     .fas.fa-bars.fa-2x {
         display: none;
     }
@@ -505,5 +571,22 @@ footer {
     /* footer */
     footer {
         font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    #kontak {
+        flex-direction: column;
+    }
+
+    .kontak-img,
+    .kontak-info {
+        width: 100%;
+        flex: none;
+    }
+
+    .kontak-info {
+        border-left: none;
+        border-top: 2px solid #000000;
     }
 }
