@@ -148,6 +148,137 @@ html {
     margin-left: 10px;
 }
 
+.shopping-cart-button {
+    position: absolute;
+    top: 56px;
+    right: 8%;
+    max-width: 320px;
+    background-color: #fffaf1;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    transform: scaleY(0);
+    transform-origin: top right;
+    opacity: 0;
+    transition: all 0.3s ease-in-out; 
+    pointer-events: none;
+}
+
+.shopping-cart-button h3 {
+    font-size: 18px;
+    text-align: center;
+    border-bottom: 2px solid #c5c3c3;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+    font-weight: 800;
+}
+
+.shopping-cart-button.active {
+    transform: scaleY(1);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.item-info {
+    flex: 1;
+    padding-right: 15px;
+}
+
+.item-info p {
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.item-info span {
+    font-weight: 500;
+}
+
+.message-cart {
+    display: block;
+    font-size: 14px;
+}
+
+.price {
+    font-size: 12px;
+    color: #666;
+}
+
+.total-cart {
+    font-weight: 700;
+}
+
+.total-cart span {
+    font-weight: 500;
+    margin-left: 10px;
+}
+
+.qty-controls {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.qty-controls span {
+    width: 20px;
+    text-align: center;
+    display: inline-block;
+}
+
+.btn-qty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    background-color: #7a4a2b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.2s ease;
+    padding: 0;
+}
+
+.btn-qty:hover {
+    background-color: #5c3a21;
+}
+
+.submit-cart {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #7a4a2b;
+    margin-top: 10px;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: background-color 0.2s ease;
+}
+
+.submit-cart:hover {
+    background-color: #5c3a21;
+}
+
+.fas.fa-bars.fa-2x {
+    font-size: 18px;
+}
+
 /* hero banner */
 #hero-banner {
     margin: 20px 10px;
@@ -221,13 +352,29 @@ html {
 
 .menu-price {
     display: block;
+    cursor: pointer;
     margin-top: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2px 10px;
+    width: fit-content;
+    font-family: inherit;
+    font-size: 16px;
     font-weight: 600;
     color: #7a4a2b;
     background-color: #ddb296;
-    border-radius: 12px;
     border: 2px solid #a56a43;
-    padding: 2px 10px;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+}
+
+.menu-price:hover {
+    background-color: #a56a43;
+    color: #fffaf1;
+}
+
+.menu-price:active {
+    transform: scale(0.95);
 }
 
 /* tentang */
@@ -349,6 +496,60 @@ footer {
     color: #f6eede;
 }
 
+/* notification */
+#notif-container {
+    position: fixed;
+    bottom: 95px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+.notif-message {
+    background-color: #5c3a21;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transform: translateX(120%);
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.notif-message.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* Back to Top Button */
+.btn-ke-atas {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #fff;
+    color: #000;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-ke-atas:hover {
+    background-color: #ddd; 
+    transform: translateY(-5px);
+}
 
 /* media 576-992px */
 @media (min-width: 576px) {
@@ -378,6 +579,12 @@ footer {
 
     .fas.fa-bars.fa-2x {
         display: none;
+    }
+
+    .shopping-cart-button {
+        position: fixed;
+        top: 60px;
+        right: 3%;
     }
 
     /* herro banner */
@@ -455,6 +662,11 @@ footer {
 
     .nav-menu .left-menu img {
         max-width: 10%;
+    }
+    
+    .shopping-cart-button {
+        top: 70px;
+        right: 3%;
     }
 
     /* herro banner */

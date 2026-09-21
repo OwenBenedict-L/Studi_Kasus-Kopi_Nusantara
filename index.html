@@ -24,7 +24,7 @@
         <div class="right-menu">
             <ul class="right-menu-show">
                 <li><a href="#" id="searching"><i class="fas fa-search"></i></a></li>
-                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                <li><a href="#" id="shopping-cart"><i class="fas fa-shopping-cart"></i></a></li>
                 <li><a href="#"><i class="fas fa-bars fa-2x"></i></a></li>
             </ul>
 
@@ -33,6 +33,22 @@
             </div>
         </div>
     </nav>
+
+    <div class="shopping-cart-button">
+        <h3>Keranjang Saya</h3>
+
+        <div class="content-cart">
+            <p class="message-cart">Tidak ada barang yang dibeli...</p>
+        </div>
+
+        <div class="info-cart">
+            <div class="total-cart">
+                <p class="content-total-cart">Total: <span id="price">Rp 0</span></p>
+            </div>
+
+            <button type="button" class="submit-cart" id="submit-cart">Beli</button>
+        </div>
+    </div>
 
     <main>
         <!-- hero banner -->
@@ -148,14 +164,13 @@
         </div>
     </footer>
     
-    <script>
-        document.querySelector('.fas.fa-bars.fa-2x').addEventListener('click', () => 
-        document.querySelector('.left-menu-show').classList.toggle('show'));
+    <div id="notif-container"></div>
 
-        document.querySelector('#searching').addEventListener('click', (e) => {
-            e.preventDefault(); 
-            document.querySelector('.search-button').classList.toggle('active');
-        });
-    </script>
+    <!-- Back to Top Button -->
+    <a href="#" class="btn-ke-atas" title="Kembali ke atas">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script src="script.js" defer></script>
 </body>
 </html>
